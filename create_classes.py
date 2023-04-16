@@ -17,7 +17,8 @@ def get_classes(files):
     # ordina il dataframe per la seconda colonna
     df.sort_values(by=['folder'], inplace=True)
     df.reset_index(drop=True, inplace=True)
-    df.drop(df.columns[1])
+    df.drop(df.columns[1],axis=1,inplace=True)
+    
 
     df['class']=df['class'].replace([1, 2, 3, 4, 5], 1)
     df['class']=df['class'].replace([6, 7, 8], 2)
