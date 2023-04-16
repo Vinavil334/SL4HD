@@ -8,7 +8,7 @@ def get_classes(files):
     ##                                                     ##
     ## OUTPUT:                                             ##
     ## - df: dataframe keeping only the 'classes'          ##
-    #        attribute                                     ##
+    ##        attribute                                    ##
     #########################################################
 
     # carica il file csv in un dataframe
@@ -17,7 +17,8 @@ def get_classes(files):
     # ordina il dataframe per la seconda colonna
     df.sort_values(by=['folder'], inplace=True)
     df.reset_index(drop=True, inplace=True)
-    df.drop(df.columns[1],axis=1,inplace=True)
+    df.drop(columns = ['folder'], inplace=True)
+
     
 
     df['class']=df['class'].replace([1, 2, 3, 4, 5], 1)
