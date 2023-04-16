@@ -11,15 +11,11 @@ def get_classes(files):
     ##        attribute                                    ##
     #########################################################
 
-    # carica il file csv in un dataframe
     df = pd.read_csv(files, delimiter=';')
 
-    # ordina il dataframe per la seconda colonna
     df.sort_values(by=['folder'], inplace=True)
     df.reset_index(drop=True, inplace=True)
-    df.drop(columns = ['folder'], inplace=True)
-
-    
+    df.drop(columns = ['Unnamed: 0','folder'], inplace=True)
 
     df['class']=df['class'].replace([1, 2, 3, 4, 5], 1)
     df['class']=df['class'].replace([6, 7, 8], 2)
