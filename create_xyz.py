@@ -71,4 +71,4 @@ def get_polynomials(ls,k):
 path = "C:/Users/markh/Desktop/Università/Healthcare Data/Projects-20230408/Archivio/IFMBE Scientific Challenge/Train2/"
 df = get_polynomials(create_list(path), 5)
 
-df.to_csv("xyz.csv", index=False)
+df.to_csv('xyz.csv', index=False)
